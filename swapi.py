@@ -20,3 +20,6 @@ def vaisseau_json():
     r = requests.get("https://swapi.dev/api/starships")
     jsonr = r.json()
 
+def ppl_json():
+    ppljson = ppl.json()
+    return ppljson
