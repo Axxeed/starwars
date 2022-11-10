@@ -4,11 +4,6 @@ import pandas as pd
 import requests
 
 
-def people_df():
-    ppldf = pd.DataFrame(ppljson)
-    return ppldf
-
-
 def import_planets():
     pr = requests.get('https://swapi.dev/api/planets/').json()
     return pr
@@ -18,13 +13,14 @@ def ppl_api():
     ppl = requests.get('https://swapi.dev/api/people')
     return ppl
 
+def people_df():
+    ppldf = pd.DataFrame(ppljson)
+    return ppldf
+    
 def import_species():
     sp = requests.get('https://swapi.dev/api/species/').json()
     return sp
-    
-def species_df():
-    df = pd.DataFrame(import_species()['results'])
-    return df
+
 
 
 def import_vaisseau():
@@ -43,8 +39,24 @@ def ppl_json():
 def vaisseau_df():
     r = requests.get("https://swapi.dev/api/starships")
     jsonr = r.json()
-    df_vaisseau = pd.DataFrame(jsonr)
+    df_vaisseau = pd.DataFrame(jsonr["results"])
     return df_vaisseau
+
+def import_film():
+    r = requests.get("https://swapi.dev/api/films")
+    return r
+
+def film_json():
+    r = requests.get("https://swapi.dev/api/films")
+    jsonr = r.json()
+    
+def film_df():
+    r = requests.get("https://swapi.dev/api/films")
+    jsonr = r.json()
+    df_film = pd.DataFrame(jsonr["results"])
+    return df_film
+
+
 
 
 
