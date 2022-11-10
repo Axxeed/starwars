@@ -34,7 +34,19 @@ def ppl_json():
 def vaisseau_df():
     r = requests.get("https://swapi.dev/api/starships")
     jsonr = r.json()
-    df_vaisseau = pd.DataFrame(jsonr)
+    df_vaisseau = pd.DataFrame(jsonr["results"])
     return df_vaisseau
 
+def import_film():
+    r = requests.get("https://swapi.dev/api/films")
+    return r
 
+def film_json():
+    r = requests.get("https://swapi.dev/api/films")
+    jsonr = r.json()
+    
+def film_df():
+    r = requests.get("https://swapi.dev/api/films")
+    jsonr = r.json()
+    df_film = pd.DataFrame(jsonr["results"])
+    return df_film
