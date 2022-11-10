@@ -4,6 +4,11 @@ import pandas as pd
 import requests
 
 
+def people_df():
+    ppldf = pd.DataFrame(ppljson)
+    return ppldf
+
+
 def import_planets():
     pr = requests.get('https://swapi.dev/api/planets/').json()
     return pr
@@ -40,6 +45,7 @@ def vaisseau_df():
     jsonr = r.json()
     df_vaisseau = pd.DataFrame(jsonr)
     return df_vaisseau
+
 
 
 
