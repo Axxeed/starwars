@@ -1,4 +1,5 @@
 
+
 import pandas as pd
 import requests
 
@@ -6,7 +7,9 @@ def import_vehicles():
     ss = requests.get('https://swapi.dev/api/vehicles/').json()
     return ss
 
-
+def vehicles_df():
+    vh = pd.DataFrame(import_vehicles()['results'])
+    return vh
 
 
 
@@ -61,6 +64,7 @@ def film_df():
     jsonr = r.json()
     df_film = pd.DataFrame(jsonr["results"])
     return df_film
+
 
 
 
