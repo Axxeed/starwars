@@ -1,4 +1,5 @@
 
+
 import pandas as pd
 import requests
 
@@ -12,6 +13,10 @@ def ppl_api():
     ppl = requests.get('https://swapi.dev/api/people')
     return ppl
 
+def people_df():
+    ppldf = pd.DataFrame(ppljson)
+    return ppldf
+    
 def import_species():
     sp = requests.get('https://swapi.dev/api/species/').json()
     return sp
@@ -50,3 +55,9 @@ def film_df():
     jsonr = r.json()
     df_film = pd.DataFrame(jsonr["results"])
     return df_film
+
+
+
+
+
+
