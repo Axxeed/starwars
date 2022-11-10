@@ -1,4 +1,5 @@
 
+
 import pandas as pd
 import requests
 
@@ -15,7 +16,10 @@ def ppl_api():
 def import_species():
     sp = requests.get('https://swapi.dev/api/species/').json()
     return sp
-
+    
+def species_df():
+    df = pd.DataFrame(import_species()['results'])
+    return df
 
 
 def import_vaisseau():
@@ -36,5 +40,6 @@ def vaisseau_df():
     jsonr = r.json()
     df_vaisseau = pd.DataFrame(jsonr)
     return df_vaisseau
+
 
 
