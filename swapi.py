@@ -2,6 +2,11 @@ import pandas as pd
 import requests
 
 
+def import_planets():
+    pr = requests.get('https://swapi.dev/api/planets/').json()
+    return pr
+
+
 def ppl_api():
     ppl = requests.get('https://swapi.dev/api/people')
     return ppl
@@ -23,3 +28,4 @@ def vaisseau_json():
 def ppl_json():
     ppljson = ppl.json()
     return ppljson
+
