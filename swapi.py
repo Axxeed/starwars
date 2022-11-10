@@ -1,5 +1,8 @@
 
 
+
+
+
 import pandas as pd
 import requests
 
@@ -10,7 +13,10 @@ def import_vehicles():
 def vehicles_df():
     vh = pd.DataFrame(import_vehicles()['results'])
     return vh
-
+    
+def planets_df():
+    po = pd.DataFrame(import_species()['results'])
+    return po
 
 
 def import_planets():
@@ -64,6 +70,7 @@ def film_df():
     jsonr = r.json()
     df_film = pd.DataFrame(jsonr["results"])
     return df_film
+
 
 
 
