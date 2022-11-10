@@ -15,3 +15,8 @@ def vaisseau_json():
     r = requests.get("https://swapi.dev/api/starships")
     jsonr = r.json()
 
+def vaisseau_df():
+    r = requests.get("https://swapi.dev/api/starships")
+    jsonr = r.json()
+    df_vaisseau = pd.DataFrame(jsonr)
+    return df_vaisseau
