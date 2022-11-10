@@ -1,5 +1,11 @@
+
 import pandas as pd
 import requests
+
+
+def import_planets():
+    pr = requests.get('https://swapi.dev/api/planets/').json()
+    return pr
 
 
 def ppl_api():
@@ -19,3 +25,15 @@ def import_vaisseau():
 def vaisseau_json():
     r = requests.get("https://swapi.dev/api/starships")
     jsonr = r.json()
+
+def ppl_json():
+    ppljson = ppl.json()
+    return ppljson
+
+def vaisseau_df():
+    r = requests.get("https://swapi.dev/api/starships")
+    jsonr = r.json()
+    df_vaisseau = pd.DataFrame(jsonr)
+    return df_vaisseau
+
+
