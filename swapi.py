@@ -1,7 +1,13 @@
 
-
 import pandas as pd
 import requests
+
+def import_vehicles():
+    ss = requests.get('https://swapi.dev/api/vehicles/').json()
+    return ss
+
+
+
 
 
 def import_planets():
