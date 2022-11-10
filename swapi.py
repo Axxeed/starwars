@@ -25,6 +25,7 @@ def import_vaisseau():
 def vaisseau_json():
     r = requests.get("https://swapi.dev/api/starships")
     jsonr = r.json()
+    return jsonr
 
 def ppl_json():
     ppljson = ppl.json()
